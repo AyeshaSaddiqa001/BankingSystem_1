@@ -2,6 +2,7 @@
 
 import Button from "@/components/UI/button";
 import Toast from "@/components/UI/toast";
+import { navigate } from "@/lib/redirect";
 import axios from "axios";
 import { useState } from "react";
 
@@ -36,6 +37,7 @@ export default function CreateAccount() {
       )
       .then((res) => {
         showToastMessage("Registered Account");
+        navigate("/");
       })
       .catch((e) => {
         if (e.response.status === 409) {

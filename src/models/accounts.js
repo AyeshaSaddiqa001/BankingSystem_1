@@ -1,5 +1,6 @@
 // models/Account.js
 import mongoose from "mongoose";
+import { TransactionSchema } from "./transaction";
 
 const AccountSchema = new mongoose.Schema({
   accountType: {
@@ -19,6 +20,7 @@ const AccountSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  transactions: [TransactionSchema],
 });
 
 export default mongoose.models.Account ||
