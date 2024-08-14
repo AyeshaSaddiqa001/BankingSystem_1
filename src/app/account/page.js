@@ -1,9 +1,9 @@
 import Navbar from "@/components/common/Navbar";
 
-export default function Home() {
+export default function Account() {
   return (
-    <main className="">
+    <>
       <Navbar />
-    </main>
+    </>
   );
 }
