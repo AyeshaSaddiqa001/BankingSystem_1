@@ -8,16 +8,14 @@ export default function Home() {
   const [accounts, setAccounts] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("/api/account")
-      .then((data) => {
-        setAccounts(data.data);
-      })
-      .catch((e) => console.log(e));
+    axios.get("/api/account").then((data) => {
+      setAccounts(data.data);
+    });
+    // .catch((e) => console.log(e));
   }, []);
 
   useEffect(() => {
-    console.log(accounts);
+    // console.log(accounts);
   }, [accounts]);
 
   return (
