@@ -1,5 +1,5 @@
 import connectToDatabase from "@/lib/mongodb";
-import Account from "@/models/Account";
+import Account from "@/models/accounts";
 
 export async function GET(request, { params }) {
   await connectToDatabase();

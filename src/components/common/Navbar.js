@@ -4,29 +4,18 @@ import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const pathname = usePathname();
-  //   console.log(pathname);
-  const links = [
-    {
-      name: "Home",
-      url: "/",
-    },
-    {
-      name: "Transactions",
-      url: "/transactions",
-    },
-    {
-      name: "Account",
-      url: "/account",
-    },
-  ];
+  const links = [{ name: "Create Account", url: "/account/create" }];
   return (
     <>
-      <nav className="w-full h-16 container mx-auto border border-black flex items-center justify-between">
-        <h1 className="text-2xl font-bold tracking-wide">Banking System</h1>
+      <nav className="w-full h-16 container mx-auto  flex items-center justify-between">
+        <h1 className="text-2xl font-bold tracking-wide">
+          <a href="/">Banking System</a>
+        </h1>
         <ul className="flex gap-4">
           {links.map((link, idx) => {
             return (
               <li
+                key={idx}
                 className={`relative group ${
                   pathname === link.url ? "font-semibold" : ""
                 }`}
