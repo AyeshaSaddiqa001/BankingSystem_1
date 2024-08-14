@@ -21,7 +21,7 @@ export async function GET(request, { params }) {
   }
 }
 
-export async function PUT(request, { params }) {
+export async function PATCH(request, { params }) {
   await connectToDatabase();
 
   const { accountType, userName } = await request.json();

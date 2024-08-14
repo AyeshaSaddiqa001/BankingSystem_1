@@ -21,7 +21,7 @@ export default function Home() {
   }, [accounts]);
 
   return (
-    <main className="h-screen ml-48 container mx-auto border border-black">
+    <main className="flex container mx-auto border border-black">
       {accounts.map((account, idx) => {
         return <Card key={idx} account={account} />;
       })}

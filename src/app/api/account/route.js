@@ -9,13 +9,19 @@ export async function POST(request) {
   const { accountType, userName } = await request.json();
 
   const existingAccount = await Account.find({ userName: userName });
-  console.log(existingAccount);
+  //   console.log(existingAccount);
 
   if (existingAccount.length > 0) {
-    return new Response(JSON.stringify({ error: "Account Already Exists!" }), {
-      status: 409,
-      headers: { "Content-Type": "application/json" },
-    });
+    return new Response(
+      JSON.stringify({
+        error: "Account Already Exists!",
+        account: existingAccount,
+      }),
+      {
+        status: 409,
+        headers: { "Content-Type": "application/json" },
+      }
+    );
   }
 
   const account = new Account({
